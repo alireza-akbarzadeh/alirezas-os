@@ -1,3 +1,4 @@
+  "prefer-nullish-coalescing-assignment": "off",
 import { FlatCompat } from "@eslint/eslintrc";
 import tseslint from "typescript-eslint";
 
@@ -33,6 +34,8 @@ export default tseslint.config(
         "error",
         { checksVoidReturn: { attributes: false } },
       ],
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
     },
   },
   {

@@ -1,9 +1,9 @@
-import { useFinder } from "../hooks/use-finder";
-import { FinderSidebar } from "./finder/finder-sidebar";
-import { FinderToolbar } from "./finder/finder-toolbar";
-import { FinderGridView } from "./finder/finder-grid-view";
-import { FinderListView } from "./finder/finder-list-view";
-import { FinderPreview } from "./finder/finder-preview";
+import { useFinder } from "../../hooks/use-finder";
+import { FinderSidebar } from "./finder-sidebar";
+import { FinderToolbar } from "./finder-toolbar";
+import { FinderGridView } from "./finder-grid-view";
+import { FinderListView } from "./finder-list-view";
+import { FinderPreview } from "./finder-preview";
 import { useEffect } from "react";
 import { openWindow } from "@/store/app-store";
 import { WindowWrapper } from "@/components/window-wrapper";

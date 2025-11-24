@@ -31,7 +31,6 @@ interface CommandItem {
 
 export function SpotlightCommand() {
   const { isOpen, setOpen } = useSpotlight();
-
   const spotlightZIndex = getSpotlightZIndex();
 
   // Keyboard shortcuts are now handled globally in GlobalKeyboardShortcuts component

@@ -2,15 +2,16 @@
 import Dock from "@/components/dock";
 import { GlobalKeyboardShortcuts } from "@/components/global-keyboard-shortcuts";
 import { Navbar } from "@/components/navbar";
-import { ContactWindow } from "@/windows/contact-window";
-import { FinderWindow } from "@/windows/finder-window";
-import { PhotosWindow } from "@/windows/photos-window";
-import { QuickLookWindow } from "@/windows/quicklook-window";
-import { Resume } from "@/windows/resume";
-import { SafariWindow } from "@/windows/safari-window";
-import { SettingsWindow } from "@/windows/settings-window";
-import { TerminalWindow } from "@/windows/terminal-window";
-import { TrashWindow } from "@/windows/trash-window";
+import { ContactWindow } from "@/windows/contact/contact-window";
+import { FinderWindow } from "@/windows/finder/finder-window";
+import { PhotosWindow } from "@/windows/photos/photos-window";
+import { QuickLookWindow } from "@/components/quicklook-window";
+import { Resume } from "@/components/resume";
+import { SafariWindow } from "@/windows/safari/safari-window";
+import { SettingsWindow } from "@/windows/setting/settings-window";
+import { SpotlightCommand } from "@/windows/spotlight/spotlight-command";
+import { TerminalWindow } from "@/windows/terminal/terminal-window";
+import { TrashWindow } from "@/windows/trash/trash-window";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <GlobalKeyboardShortcuts />
       <FinderWindow />
       <SafariWindow />
+      <SpotlightCommand />
       <PhotosWindow />
       <ContactWindow />
       <TerminalWindow />

@@ -68,16 +68,17 @@ export function WindowWrapper({
 
   // Initialize position and size on first open
   useEffect(() => {
-    if (
-      window.isOpen &&
-      window.position?.x === 100 &&
-      window.position.y === 100
-    ) {
-      // Center window on screen
-      const x = Math.max(50, (globalThis.innerWidth - defaultWidth) / 2);
-      const y = Math.max(50, (globalThis.innerHeight - defaultHeight) / 2);
-      setWindowPosition(windowType, x, y);
-      setWindowSize(windowType, defaultWidth, defaultHeight);
+    if (window.isOpen) {
+      // Center window on screen if it's just opened or if position is default
+      const isDefaultPosition =
+        !window.position ||
+        (window.position.x === 100 && window.position.y === 100);
+      if (isDefaultPosition) {
+        const x = Math.max(0, (window.innerWidth - defaultWidth) / 2);
+        const y = Math.max(0, (window.innerHeight - defaultHeight) / 2);
+        setWindowPosition(windowType, x, y);
+        setWindowSize(windowType, defaultWidth, defaultHeight);
+      }
     }
   }, [window.isOpen, windowType, defaultWidth, defaultHeight]);
 

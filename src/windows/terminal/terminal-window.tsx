@@ -1,6 +1,6 @@
 import { WindowWrapper } from "@/components/window-wrapper";
-import { useTerminal, useTerminalAutocomplete } from "../hooks";
-import type { Command } from "../hooks/use-terminal";
+import { useTerminal, useTerminalAutocomplete } from "../../hooks";
+import type { Command } from "../../hooks/use-terminal";
 
 const COMMANDS: Record<string, Command> = {
   help: {
