@@ -1,6 +1,5 @@
 "use client";
 import Dock from "@/components/dock";
-import { GlobalKeyboardShortcuts } from "@/components/global-keyboard-shortcuts";
 import { Navbar } from "@/components/navbar";
 import { ContactWindow } from "@/windows/contact/contact-window";
 import { FinderWindow } from "@/windows/finder/finder-window";
@@ -16,7 +15,7 @@ import { TrashWindow } from "@/windows/trash/trash-window";
 export default function Home() {
   return (
     <main className="relative min-h-screen">
-      <GlobalKeyboardShortcuts />
+      <Navbar />
       <FinderWindow />
       <SafariWindow />
       <SpotlightCommand />
@@ -27,7 +26,6 @@ export default function Home() {
       <SettingsWindow />
       <QuickLookWindow />
       <Resume />
-      <Navbar />
       <Dock />
     </main>
   );
