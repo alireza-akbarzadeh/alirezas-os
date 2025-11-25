@@ -1,16 +1,21 @@
 const navLinks = [
+  { id: "finder", name: "Finder", type: "finder" },
+  { id: "photos", name: "Photos", type: "photos" },
+  { id: "notes", name: "Notes", type: "notes" },
+  { id: "music", name: "Music", type: "music" },
+  { id: "terminal", name: "Terminal", type: "terminal" },
   {
-    id: 1,
+    id: "Projects",
     name: "Projects",
     type: "finder",
   },
   {
-    id: 3,
+    id: "Contact",
     name: "Contact",
     type: "contact",
   },
   {
-    id: 4,
+    id: "Resume",
     name: "Resume",
     type: "resume",
   },
@@ -43,6 +48,12 @@ const dockApps = [
     canOpen: true,
   },
   {
+    id: "music",
+    name: "Music",
+    icon: "music.png",
+    canOpen: true,
+  },
+  {
     id: "safari",
     name: "Articles", // was "Safari"
     icon: "safari.png",
@@ -58,6 +69,12 @@ const dockApps = [
     id: "contact",
     name: "Contact", // or "Get in touch"
     icon: "contact.png",
+    canOpen: true,
+  },
+  {
+    id: "notes",
+    name: "Notes",
+    icon: "note.png",
     canOpen: true,
   },
   {

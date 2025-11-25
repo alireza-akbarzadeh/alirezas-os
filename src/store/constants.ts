@@ -28,6 +28,8 @@ export const initialState: AppState = {
     imgfile: createInitialWindowState(),
     trash: createInitialWindowState(),
     settings: createInitialWindowState(),
+    notes: createInitialWindowState(),
+    music: createInitialWindowState(),
   },
   maxZIndex: INITIAL_Z_INDEX,
   focusedWindow: null,

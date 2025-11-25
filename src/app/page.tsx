@@ -11,6 +11,8 @@ import { SettingsWindow } from "@/windows/setting/settings-window";
 import { SpotlightCommand } from "@/windows/spotlight/spotlight-command";
 import { TerminalWindow } from "@/windows/terminal/terminal-window";
 import { TrashWindow } from "@/windows/trash/trash-window";
+import { NotesWindow } from "@/windows/notes/notes";
+import { MusicWindow } from "@/windows/music";
 
 export default function Home() {
   return (
@@ -26,6 +28,8 @@ export default function Home() {
       <SettingsWindow />
       <QuickLookWindow />
       <Resume />
+      <NotesWindow />
+      <MusicWindow />
       <Dock />
     </main>
   );

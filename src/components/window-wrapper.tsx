@@ -111,7 +111,7 @@ export function WindowWrapper({
     <div
       ref={windowRef}
       className={`fixed flex flex-col bg-white shadow-2xl transition-all dark:bg-gray-900 dark:shadow-gray-950/50 ${
-        isMaximized ? "rounded-none" : "overflow-hidden rounded-xl"
+        isMaximized ? "rounded-none" : "overflow-hidden rounded-lg"
       } ${isDragging || isResizing ? "transition-none" : "transition-all duration-200"} ${className}`}
       style={{
         zIndex: window.zIndex,
@@ -164,7 +164,7 @@ export function WindowWrapper({
       {/* Title Bar */}
       <div
         ref={headerRef}
-        className="relative z-10 flex shrink-0 items-center gap-3 border-b border-gray-200 bg-gradient-to-b from-gray-100 to-gray-50 px-4 py-3 select-none dark:border-gray-700 dark:from-gray-800 dark:to-gray-900"
+        className="relative z-10 flex shrink-0 items-center justify-between gap-3 border-b border-gray-200 bg-linear-to-b from-gray-100 to-gray-50 px-4 py-3 select-none dark:border-gray-700 dark:from-gray-800 dark:to-gray-900"
         style={{ cursor: isDragging ? "grabbing" : "grab" }}
       >
         <WindowControls

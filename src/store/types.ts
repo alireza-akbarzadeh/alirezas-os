@@ -8,7 +8,9 @@ export type WindowType =
   | "txtfile"
   | "imgfile"
   | "trash"
-  | "settings";
+  | "settings"
+  | "notes"
+  | "music";
 
 export interface WindowState {
   isOpen: boolean;
