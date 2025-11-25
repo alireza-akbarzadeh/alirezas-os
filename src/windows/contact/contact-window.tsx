@@ -18,6 +18,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { WindowWrapper } from "@/components/window-wrapper";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { AvatarFallback } from "@radix-ui/react-avatar";
 
 export function ContactWindow() {
   const [formData, setFormData] = useState({
@@ -62,13 +64,13 @@ export function ContactWindow() {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/alireza-akbarzadeh",
       color: "hover:bg-gray-900",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://linkedin.com/in/alireza-akbarzadeh",
       color: "hover:bg-blue-600",
     },
     {
@@ -80,7 +82,7 @@ export function ContactWindow() {
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:hello@example.com",
+      href: "mailto:alireza.akbarzadeh.dev@gmail.com",
       color: "hover:bg-red-500",
     },
   ];
@@ -89,16 +91,16 @@ export function ContactWindow() {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@example.com",
-      href: "mailto:hello@example.com",
+      value: "alireza.akbarzadeh.dev@gmail.com",
+      href: "mailto:alireza.akbarzadeh.dev@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+98 09381223380",
+      href: "tel:+989381223380",
     },
-    { icon: MapPin, label: "Location", value: "San Francisco, CA" },
+    { icon: MapPin, label: "Location", value: "Tehran, Iran" },
   ];
 
   return (
@@ -116,11 +118,12 @@ export function ContactWindow() {
           <div className="flex w-80 flex-col border-r border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
             {/* Profile Section */}
             <div className="mb-8 text-center">
-              <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-linear-to-br from-blue-500 to-purple-600 text-3xl font-bold text-white shadow-lg">
-                A
-              </div>
+              <Avatar className="mx-auto mb-4 size-24">
+                <AvatarImage src="/images/alireza.jpeg" alt="@shadcn" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
               <h2 className="mb-1 text-xl font-semibold text-gray-900 dark:text-gray-100">
-                Adrian
+                Alireza
               </h2>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Full Stack Developer
