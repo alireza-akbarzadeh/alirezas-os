@@ -1,6 +1,6 @@
 "use client";
 import Dock from "@/components/dock";
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/components/navbar/navbar";
 import { ContactWindow } from "@/windows/contact/contact-window";
 import { FinderWindow } from "@/windows/finder/finder-window";
 import { PhotosWindow } from "@/windows/photos/photos-window";
