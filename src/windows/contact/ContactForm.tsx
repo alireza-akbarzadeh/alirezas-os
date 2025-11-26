@@ -2,6 +2,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Send, CheckCircle2 } from "lucide-react";
+import type { InquiryType } from "./contact-window";
 
 interface ContactFormProps {
   formData: any;
@@ -13,7 +14,7 @@ interface ContactFormProps {
   selectedInquiry: any;
   selectedType: string;
   inquiryTypes: any[];
-  setSelectedType: (type: string) => void;
+  setSelectedType: (type: InquiryType) => void;
 }
 
 export function ContactForm({
