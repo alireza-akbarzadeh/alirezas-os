@@ -9,6 +9,7 @@ import {
   FolderIcon,
   GalleryHorizontalIcon,
   SettingsIcon,
+  Music2,
 } from "lucide-react";
 
 export interface CommandItem {
@@ -129,5 +130,25 @@ export const getCommands = (
       setOpen(false);
     },
     category: "System",
+  },
+  {
+    id: "notes",
+    label: "Notes",
+    icon: <FileTextIcon className="mr-2 h-4 w-4" />,
+    action: () => {
+      openWindow("notes");
+      setOpen(false);
+    },
+    category: "Apps",
+  },
+  {
+    id: "music",
+    label: "Music",
+    icon: <Music2 className="mr-2 h-4 w-4" />,
+    action: () => {
+      openWindow("music");
+      setOpen(false);
+    },
+    category: "Apps",
   },
 ];

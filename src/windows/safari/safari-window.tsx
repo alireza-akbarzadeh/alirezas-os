@@ -10,6 +10,8 @@ import {
   ShieldHalf,
 } from "lucide-react";
 import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/constants";
 import { WindowWrapper } from "@/components/window-wrapper";
 
@@ -44,12 +46,12 @@ export function SafariWindow() {
             <ShieldHalf className="h-5 w-5 text-gray-600" />
             <div className="flex flex-1 items-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-1.5">
               <Search className="h-4 w-4 text-gray-400" />
-              <input
+              <Input
                 type="text"
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 text-sm outline-none"
+                className="flex-1 border-none text-sm shadow-none outline-none"
               />
             </div>
           </div>
@@ -149,12 +151,13 @@ export function SafariWindow() {
                 </span>
                 "
               </p>
-              <button
+              <Button
+                variant="default"
                 onClick={() => setSearchQuery("")}
-                className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
+                className="px-6 py-3"
               >
                 Clear Search
-              </button>
+              </Button>
             </div>
           </div>
         )}
@@ -237,14 +240,14 @@ export function SafariWindow() {
                     delivered straight to your inbox.
                   </p>
                   <div className="flex max-w-md gap-3">
-                    <input
+                    <Input
                       type="email"
                       placeholder="Enter your email"
                       className="flex-1 rounded-lg border border-white/30 bg-white/20 px-4 py-3 text-white backdrop-blur-sm placeholder:text-white/60 focus:ring-2 focus:ring-white/50 focus:outline-none"
                     />
-                    <button className="rounded-lg bg-white px-6 py-3 font-semibold whitespace-nowrap text-blue-600 transition-colors hover:bg-blue-50">
+                    <Button className="bg-white px-6 py-3 font-semibold whitespace-nowrap text-blue-600 hover:bg-blue-50">
                       Subscribe
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </div>
