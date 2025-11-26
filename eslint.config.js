@@ -1,4 +1,3 @@
-  "prefer-nullish-coalescing-assignment": "off",
 import { FlatCompat } from "@eslint/eslintrc";
 import tseslint from "typescript-eslint";
 
@@ -21,6 +20,7 @@ export default tseslint.config(
     rules: {
       "@typescript-eslint/array-type": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
+      "prefer-nullish-coalescing-assignment": "off",
       "@typescript-eslint/consistent-type-imports": [
         "warn",
         { prefer: "type-imports", fixStyle: "inline-type-imports" },
