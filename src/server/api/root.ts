@@ -6,8 +6,11 @@ import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
  *
  * All routers added in /api/routers should be manually added here.
  */
+import { terminalRouter } from "@/server/api/routers/terminal";
+
 export const appRouter = createTRPCRouter({
   post: postRouter,
+  terminal: terminalRouter,
 });
 
 // export type definition of API
