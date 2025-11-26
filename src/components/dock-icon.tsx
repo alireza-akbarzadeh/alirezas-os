@@ -36,7 +36,7 @@ export function DockIcon({ app }: DockIconProps) {
           disabled={!app.canOpen}
         >
           <img
-            src={`/images/${app.icon}`}
+            src={`/dock/${app.icon}`}
             alt={app.name}
             className="pointer-events-none h-full w-full"
           />

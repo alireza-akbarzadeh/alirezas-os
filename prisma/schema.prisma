@@ -1,18 +1,10 @@
-// Prisma schema for Better Auth
-// learn more: https://better-auth.com/docs/concepts/database
-
 generator client {
-  provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
 }
-
-// NOTE: When using mysql or sqlserver, uncomment the //@db.Text annotations in model Account below
-// Further reading:
-// https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#string
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model Post {

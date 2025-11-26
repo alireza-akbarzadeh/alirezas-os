@@ -27,7 +27,7 @@ export default function Home() {
       <TrashWindow />
       <SettingsWindow />
       <QuickLookWindow />
-      <Resume />
+      {/* <Resume /> */}
       <NotesWindow />
       <MusicWindow />
       <Dock />

@@ -19,8 +19,8 @@ export default function Dock() {
     if (icons.length === 0) return;
 
     const BASE_SIZE = 56; // Base icon size in pixels
-    const MAX_SIZE = 80; // Maximum icon size in pixels
-    const INFLUENCE_RANGE = 150; // Range of influence in pixels
+    const MAX_SIZE = 90; // Maximum icon size in pixels
+    const INFLUENCE_RANGE = 180; // Range of influence in pixels
 
     const animateIcons = (mouseX: number) => {
       const dockRect = dock.getBoundingClientRect();
@@ -30,18 +30,20 @@ export default function Dock() {
         const iconCenterX = iconRect.left + iconRect.width / 2 - dockRect.left;
         const distance = Math.abs(mouseX - iconCenterX);
 
-        // Calculate scale based on distance (closer = bigger)
+        // Calculate scale using a Gaussian-like curve for smoother effect
         let scale = 1;
+        let normalizedDistance = 0;
         if (distance < INFLUENCE_RANGE) {
-          const influence = 1 - distance / INFLUENCE_RANGE;
-          scale = 1 + (influence * (MAX_SIZE - BASE_SIZE)) / BASE_SIZE;
+          normalizedDistance = distance / (INFLUENCE_RANGE / 2);
+          const influence = Math.exp(-(normalizedDistance ** 2));
+          scale = 1 + influence * ((MAX_SIZE - BASE_SIZE) / BASE_SIZE);
         }
 
         gsap.to(icon, {
           scale: scale,
           y:
             distance < INFLUENCE_RANGE
-              ? -10 * (1 - distance / INFLUENCE_RANGE)
+              ? -5 * Math.exp((-normalizedDistance) ** 2)
               : 0,
           duration: 0.3,
           ease: "power2.out",
@@ -61,8 +63,8 @@ export default function Dock() {
         gsap.to(icon, {
           scale: 1,
           y: 0,
-          duration: 0.4,
-          ease: "back.out(1.5)",
+          duration: 0.5,
+          ease: "back.out(2)",
           overwrite: "auto",
         });
       });
