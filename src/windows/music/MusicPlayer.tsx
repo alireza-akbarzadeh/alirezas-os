@@ -3,7 +3,6 @@ import {
   Pause,
   SkipBack,
   SkipForward,
-  Heart,
   Volume2,
   VolumeX,
   Volume1,
@@ -11,6 +10,7 @@ import {
 import type { Song } from "./music-types";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
+import Image from "next/image";
 
 interface MusicPlayerProps {
   song: Song;
@@ -49,10 +49,12 @@ export function MusicPlayer({
     isMuted || volume === 0 ? VolumeX : volume < 50 ? Volume1 : Volume2;
   return (
     <div className="flex flex-col items-center gap-2 p-4">
-      <img
+      <Image
         src={song.artwork}
         alt={song.title}
         className="mb-2 h-32 w-32 rounded-lg"
+        width={32}
+        height={32}
       />
       <div className="text-lg font-semibold">{song.title}</div>
       <div className="text-muted-foreground text-sm">
@@ -77,7 +79,7 @@ export function MusicPlayer({
         <span className="text-xs">{formatTime(currentTime)}</span>
         <Slider
           value={[progress]}
-          onValueChange={([val]) => setProgress(val as number)}
+          onValueChange={([val]) => setProgress(val!)}
           max={100}
           className="mx-2 flex-1"
         />
@@ -93,7 +95,7 @@ export function MusicPlayer({
         </Button>
         <Slider
           value={[volume]}
-          onValueChange={([val]) => setVolume(val as number)}
+          onValueChange={([val]) => setVolume(val!)}
           max={100}
           className="flex-1"
         />

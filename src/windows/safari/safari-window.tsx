@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/constants";
 import { WindowWrapper } from "@/components/window-wrapper";
+import Image from "next/image";
 
 export function SafariWindow() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,7 +25,7 @@ export function SafariWindow() {
       post.date.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
-  const featuredPost = filteredPosts[0] || blogPosts[0];
+  const featuredPost = filteredPosts[0] ?? blogPosts[0];
   const remainingPosts = filteredPosts.slice(1);
 
   return (
@@ -84,11 +85,12 @@ export function SafariWindow() {
             <p className="text-gray-600 dark:text-gray-400">
               Found{" "}
               <span className="font-semibold">{filteredPosts.length}</span>{" "}
-              {filteredPosts.length === 1 ? "article" : "articles"} matching "
+              {filteredPosts.length === 1 ? "article" : "articles"} matching
+              &quot;
               <span className="font-semibold text-blue-600 dark:text-blue-400">
                 {searchQuery}
               </span>
-              "
+              &quot;
             </p>
           </div>
         )}
@@ -98,39 +100,41 @@ export function SafariWindow() {
           <div className="mx-auto -mt-12 mb-12 max-w-5xl px-8">
             <div className="hover:shadow-3xl group overflow-hidden rounded-2xl bg-white shadow-2xl transition-all duration-300 dark:bg-gray-800">
               <div className="grid gap-0 md:grid-cols-2">
-                <div className="relative h-64 overflow-hidden md:h-auto">
-                  <img
-                    src={featuredPost.image}
-                    alt={featuredPost.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 rounded-full bg-blue-600 px-4 py-1.5 text-xs font-semibold tracking-wider text-white uppercase">
-                    {searchQuery ? "Match" : "Featured"}
-                  </div>
+                <Image
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ objectFit: "cover" }}
+                />
+
+                <div className="absolute top-4 left-4 rounded-full bg-blue-600 px-4 py-1.5 text-xs font-semibold tracking-wider text-white uppercase">
+                  {searchQuery ? "Match" : "Featured"}
                 </div>
-                <div className="flex flex-col justify-center p-8">
-                  <div className="mb-3 flex items-center gap-2 text-sm text-gray-500">
-                    <span className="h-2 w-2 animate-pulse rounded-full bg-blue-600" />
-                    {featuredPost.date}
-                  </div>
-                  <h2 className="mb-4 text-3xl leading-tight font-bold text-gray-900 transition-colors group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-blue-400">
-                    {featuredPost.title}
-                  </h2>
-                  <p className="mb-6 line-clamp-3 text-gray-600 dark:text-gray-400">
-                    Dive deep into the world of TypeScript and discover why it's
-                    become the go-to choice for modern developers building
-                    scalable applications.
-                  </p>
-                  <a
-                    href={featuredPost.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/link inline-flex items-center gap-2 font-semibold text-blue-600 transition-all hover:gap-3"
-                  >
-                    Read Full Article
-                    <MoveRight className="h-5 w-5 transition-transform group-hover/link:translate-x-1" />
-                  </a>
+              </div>
+              <div className="flex flex-col justify-center p-8">
+                <div className="mb-3 flex items-center gap-2 text-sm text-gray-500">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-blue-600" />
+                  {featuredPost.date}
                 </div>
+                <h2 className="mb-4 text-3xl leading-tight font-bold text-gray-900 transition-colors group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-blue-400">
+                  {featuredPost.title}
+                </h2>
+                <p className="mb-6 line-clamp-3 text-gray-600 dark:text-gray-400">
+                  Dive deep into the world of TypeScript and discover why
+                  it&apos;s become the go-to choice for modern developers
+                  building scalable applications.
+                </p>
+                <a
+                  href={featuredPost.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/link inline-flex items-center gap-2 font-semibold text-blue-600 transition-all hover:gap-3"
+                >
+                  Read Full Article
+                  <MoveRight className="h-5 w-5 transition-transform group-hover/link:translate-x-1" />
+                </a>
               </div>
             </div>
           </div>
@@ -145,11 +149,11 @@ export function SafariWindow() {
                 No articles found
               </h3>
               <p className="mb-6 text-gray-600 dark:text-gray-400">
-                We couldn't find any articles matching "
+                We couldn&apos;t find any articles matching &quot;
                 <span className="font-semibold text-blue-600">
                   {searchQuery}
                 </span>
-                "
+                &quot;
               </p>
               <Button
                 variant="default"

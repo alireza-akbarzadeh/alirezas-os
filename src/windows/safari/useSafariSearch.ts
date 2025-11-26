@@ -10,7 +10,7 @@ export function useSafariSearch() {
       post.date.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
-  const featuredPost = filteredPosts[0] || blogPosts[0];
+  const featuredPost = filteredPosts[0] ?? blogPosts[0];
   const remainingPosts = filteredPosts.slice(1);
 
   return {

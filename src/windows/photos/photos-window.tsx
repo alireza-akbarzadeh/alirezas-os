@@ -89,7 +89,7 @@ export function PhotosWindow() {
           ? (currentImageIndex - 1 + filteredImages.length) %
             filteredImages.length
           : (currentImageIndex + 1) % filteredImages.length;
-      setSelectedImage(filteredImages[newIndex]?.id as number);
+      setSelectedImage(filteredImages[newIndex]?.id!);
       setZoom(100);
       setRotation(0);
     },

@@ -92,7 +92,7 @@ export function MusicWindow() {
           />
           <div className="border-t">
             <MusicPlayer
-              song={currentSong as Song}
+              song={currentSong!}
               isPlaying={isPlaying}
               onPlayPause={() => setIsPlaying((p) => !p)}
               onPrev={prevSong}
@@ -105,7 +105,7 @@ export function MusicWindow() {
               setIsMuted={setIsMuted}
               formatTime={formatTime}
               currentTime={currentTime}
-              duration={currentSong?.duration || 0}
+              duration={currentSong?.duration ?? 0}
             />
           </div>
         </div>

@@ -12,7 +12,7 @@ export function useNotesLogic() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [editingContent, setEditingContent] = useState(
-    initialNotes[0]?.content || "",
+    initialNotes[0]?.content ?? "",
   );
   const [showFormatBar, setShowFormatBar] = useState(true);
 
@@ -71,8 +71,8 @@ export function useNotesLogic() {
   const handleDeleteNote = useCallback(() => {
     if (selectedNote) {
       setNotes((prev) => prev.filter((n) => n.id !== selectedNote.id));
-      setSelectedNote(sortedNotes[1] || null);
-      setEditingContent(sortedNotes[1]?.content || "");
+      setSelectedNote(sortedNotes[1] ?? null);
+      setEditingContent(sortedNotes[1]?.content ?? "");
     }
   }, [selectedNote, sortedNotes]);
 

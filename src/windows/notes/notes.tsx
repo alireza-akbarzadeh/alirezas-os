@@ -1,47 +1,41 @@
 "use client";
 
-import type React from "react";
-
-import { useState, useCallback } from "react";
-import { NotesSidebar } from "./NotesSidebar";
-import { NotesList } from "./NotesList";
-import {
-  Search,
-  Plus,
-  Trash2,
-  FolderOpen,
-  Pin,
-  Share2,
-  Table,
-  List,
-  CheckSquare,
-  ImageIcon,
-  Link2,
-  Lock,
-  MoreHorizontal,
-  ChevronDown,
-  Bold,
-  Italic,
-  Underline,
-  Strikethrough,
-  AlignLeft,
-  Heading1,
-  Heading2,
-  ListOrdered,
-  Code,
-  AlignRight,
-  AlignCenter,
-} from "lucide-react";
-import { useNotesLogic } from "./useNotesLogic";
-import { formatDate } from "./notes-utils";
-import type { Note, Folder } from "./notes-types";
 import { WindowWrapper } from "@/components/window-wrapper";
 import { cn } from "@/lib/utils";
+import {
+  AlignCenter,
+  AlignLeft,
+  AlignRight,
+  Bold,
+  CheckSquare,
+  ChevronDown,
+  Code,
+  FolderOpen,
+  Heading1,
+  Heading2,
+  ImageIcon,
+  Italic,
+  Link2,
+  List,
+  ListOrdered,
+  Lock,
+  MoreHorizontal,
+  Pin,
+  Plus,
+  Share2,
+  Strikethrough,
+  Table,
+  Trash2,
+  Underline,
+} from "lucide-react";
+import { NotesList } from "./NotesList";
+import { NotesSidebar } from "./NotesSidebar";
+import { useNotesLogic } from "./useNotesLogic";
 
 export function NotesWindow() {
   const {
     folders,
-    notes,
+
     setNotes,
     selectedFolder,
     setSelectedFolder,
@@ -52,10 +46,7 @@ export function NotesWindow() {
     isSearchFocused,
     setIsSearchFocused,
     editingContent,
-    setEditingContent,
     showFormatBar,
-    setShowFormatBar,
-    filteredNotes,
     sortedNotes,
     handleSelectNote,
     handleContentChange,
@@ -111,11 +102,11 @@ export function NotesWindow() {
         />
 
         {/* Notes List */}
-        <div className="flex w-72 flex-shrink-0 flex-col border-r border-gray-200/80 bg-white dark:border-gray-700/50 dark:bg-gray-900">
+        <div className="flex w-72 shrink-0 flex-col border-r border-gray-200/80 bg-white dark:border-gray-700/50 dark:bg-gray-900">
           {/* Notes List Header */}
           <div className="flex items-center justify-between border-b border-gray-200/50 px-4 py-3 dark:border-gray-700/30">
             <span className="text-sm font-semibold text-gray-800 dark:text-gray-100">
-              {folders.find((f) => f.id === selectedFolder)?.name ||
+              {folders.find((f) => f.id === selectedFolder)?.name ??
                 "All Notes"}
             </span>
             <span className="text-xs text-gray-400">
